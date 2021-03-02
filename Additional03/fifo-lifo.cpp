@@ -52,9 +52,7 @@ int main() {
 		cout << "Now person " << n << " is at the back of the line" << endl;
 
 		cout << "Now the line consists of ";
-		for (auto n : peopleInLine) {
-			cout << n;
-		}
+		PrintContainer(peopleInLine);
 		cout << endl;
 	}
 
@@ -67,9 +65,7 @@ int main() {
 		cout << "Person " << peopleInLine.at(i) << " just got their ticket" << endl;
 		FifoPop(peopleInLine, peopleInLine.at(i));
 		cout << "Now the line consists of ";
-		for (auto n : peopleInLine) {
-			cout << n;
-		}
+		PrintContainer(peopleInLine);
 		cout << endl;
 	}
 */
@@ -84,9 +80,7 @@ int main() {
 		cout << "Now book " << n << " is on the top of the stack" << endl;
 
 		cout << "Now the stack consists of ";
-		for (auto n : booksOnShelf) {
-			cout << n;
-		}
+		PrintContainer(booksOnShelf);
 		cout << endl;
 	}
 
@@ -95,9 +89,7 @@ int main() {
 		cout << "Book " << booksOnShelf.at(0) << " just got removed from the stack" << endl;
 		LifoPop(booksOnShelf, booksOnShelf.at(0));
 		cout << "Now the stack consists of ";
-		for (auto n : booksOnShelf) {
-			cout << n;
-		}
+		PrintContainer(booksOnShelf);
 		cout << endl;
 	}
 	return 0;
