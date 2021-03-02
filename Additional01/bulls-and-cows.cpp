@@ -7,7 +7,7 @@ bulls-and-cows.cpp
 contains main
 contains the full program
 
-sets up a vector with unique integers pulled form the
+sets up a vector with unique integers pulled form the 
 set of integers 0-9
 the user guesses what these 4 numbers are (they also need to get the order right)
 they are given a coresponding hint

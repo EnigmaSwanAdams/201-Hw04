@@ -7,7 +7,7 @@ contains main
 
 tests that the program functions
 as described in the homework deascription
-and includes finals version where user input
+and includes finals version where user input 
 will be used
 */
 

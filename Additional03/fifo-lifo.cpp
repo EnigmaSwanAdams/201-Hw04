@@ -17,7 +17,7 @@ using std::vector;
 using std::string;
 
 //first in first out
-void FifoPush(vector<string>& container, const string& item);
+void FifoPush(vector<string>& container, const string& item); 
 void FifoPop(vector<string>& container, string& item);
 
 //Last in first out
