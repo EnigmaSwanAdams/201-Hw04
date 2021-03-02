@@ -36,11 +36,11 @@ bool TestFifo();
 int main() {
 	//USE FUNCTION TO DEMONSTRATE TO USER
 
-	/*
+	
 	vector <string> peopleToBeInLine{ "A", "B", "C", "D" };
 	vector<string> peopleInLine;
 
-	cout << "Lets demonstrat eht econcepts of fifo (first in first out),and lifo (last in last out). \n"
+	cout << "Lets demonstrat the econcepts of fifo (first in first out),and lifo (last in last out). \n"
 		"Suppose to atart you and your friends are waiting in line to buy movie tickets. \n"
 		"There are 4 other people infront of you. Person A, person B, person C and person D. \n"
 		"When those 4 people intially got in line (supposing the ticket booth \n"
@@ -68,11 +68,16 @@ int main() {
 		PrintContainer(peopleInLine);
 		cout << endl;
 	}
-*/
+
+	if (IsContainerEmpty(peopleInLine)) {
+		cout << "No one but you and your friends are in line now." << endl;
+
+	}
+
 	vector <string> books = { "A", "B", "C", "D" };
 	vector <string> booksOnShelf;
 
-	cout << "Now suppose instead you have a pile of books. To make this pile of books you first stacked books \n"
+	cout << "\nNow suppose instead you have a pile of books. To make this pile of books you first stacked books \n"
 		"A, B, C, and D like so: " << endl;
 
 	for (auto n : books) {
@@ -92,9 +97,24 @@ int main() {
 		PrintContainer(booksOnShelf);
 		cout << endl;
 	}
+
+	if(IsContainerEmpty(booksOnShelf)) {
+		cout << "There are no more more books on the stack now" << endl;
+
+	}
+
+	cout << endl;
+	if (TestLifo()) {
+		cout << "Lifo Worked!" << endl;
+	}
+	if (TestFifo()) {
+		cout << "Fifo Worked!" << endl;
+	}
+
 	return 0;
 	
 }
+
 
 
 
@@ -104,7 +124,7 @@ void FifoPush(vector<string>& container, const string& item) {
 	container.insert(container.begin(), item);
 }
 //takes one away from the end of the vector (which is the front of the line)
-//deosn't neccessarily remove the item specified, just removes the person form the fornt of the line
+//deosn't neccessarily remove the item specified, just removes the person from the front of the line
 void FifoPop(vector<string>& container, string& item) {  
 	container.pop_back();
 	
@@ -135,10 +155,60 @@ void PrintContainer(const vector<string>& container) {
 
 //Tests
 bool TestLifo() {
-	return false;
+	vector <string> container;
+	string item = "Arbitrary";
+	
+	LifoPush(container, "A");
+	LifoPush(container, "B");
+	LifoPush(container, "C");
+	LifoPush(container, "D");
+	
+	if (container.at(0) != "D" ||
+		container.at(1) != "C" ||
+		container.at(2) != "B" ||
+		container.at(3) != "A") {
+		return false;
+	}
+
+	LifoPop(container,item);
+	LifoPop(container, item);
+	LifoPop(container, item);
+	LifoPop(container, item);
+
+	if (!IsContainerEmpty) {
+		return false;
+	}
+
+
+	return true;
 }
+
 bool TestFifo() {
-	return false;
+	vector <string> container;
+	string item = "Arbitrary";
+
+	FifoPush(container, "A");
+	FifoPush(container, "B");
+	FifoPush(container, "C");
+	FifoPush(container, "D");
+
+	if (container.at(0) != "D" ||
+		container.at(1) != "C" ||
+		container.at(2) != "B" ||
+		container.at(3) != "A") {
+		return false;
+	}
+
+	LifoPop(container, item);
+	LifoPop(container, item);
+	LifoPop(container, item);
+	LifoPop(container, item);
+	
+	if (!IsContainerEmpty) {
+		return false;
+	}
+
+	return true;
 }
 
 
