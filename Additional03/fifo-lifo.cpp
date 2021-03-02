@@ -129,11 +129,16 @@ void LifoPop(vector<string>& container, string& item) {
 }
 
 //shared functionality***********************************************
+//returns true or false whethor the contianer is empty
 bool IsContainerEmpty(const vector<string>& container) {
 	return !container.size();
 }
-void PrintContainer(const vector<string>& container) {
 
+//prints container with spaces between the objects
+void PrintContainer(const vector<string>& container) {
+	for (auto n : container) {
+		cout << n << " ";
+	}
 }
 
 //Tests
