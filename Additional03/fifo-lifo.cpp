@@ -35,6 +35,8 @@ bool TestFifo();
 
 int main() {
 	//USE FUNCTION TO DEMONSTRATE TO USER
+
+	/*
 	vector <string> peopleToBeInLine{ "A", "B", "C", "D" };
 	vector<string> peopleInLine;
 
@@ -70,8 +72,34 @@ int main() {
 		}
 		cout << endl;
 	}
+*/
+	vector <string> books = { "A", "B", "C", "D" };
+	vector <string> booksOnShelf;
 
+	cout << "Now suppose instead you have a pile of books. To make this pile of books you first stacked books \n"
+		"A, B, C, and D like so: " << endl;
 
+	for (auto n : books) {
+		LifoPush(booksOnShelf, n);
+		cout << "Now book " << n << " is on the top of the stack" << endl;
+
+		cout << "Now the stack consists of ";
+		for (auto n : booksOnShelf) {
+			cout << n;
+		}
+		cout << endl;
+	}
+
+	cout << "\nNow say we want remove all of these books. We have to remove them like such: " << endl;
+	for (int i = 0; i < 4; i++) {
+		cout << "Book " << booksOnShelf.at(0) << " just got removed from the stack" << endl;
+		LifoPop(booksOnShelf, booksOnShelf.at(0));
+		cout << "Now the stack consists of ";
+		for (auto n : booksOnShelf) {
+			cout << n;
+		}
+		cout << endl;
+	}
 	return 0;
 	
 }
@@ -91,11 +119,13 @@ void FifoPop(vector<string>& container, string& item) {
 }
 
 //Last in first out**************************************************
+// this actually just does the same thing as FifoPush, since its just creating the vector
 void LifoPush(vector<string>& container, const string& item) {
-
+	container.insert(container.begin(), item);
 }
+//simply removes the first element regardless of what is placed in item
 void LifoPop(vector<string>& container, string& item) {
-
+	container.erase(container.begin());
 }
 
 //shared functionality***********************************************
