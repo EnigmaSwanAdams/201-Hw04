@@ -130,7 +130,7 @@ void LifoPop(vector<string>& container, string& item) {
 
 //shared functionality***********************************************
 bool IsContainerEmpty(const vector<string>& container) {
-	return false; //CHANGE LATER
+	return !container.size();
 }
 void PrintContainer(const vector<string>& container) {
 
