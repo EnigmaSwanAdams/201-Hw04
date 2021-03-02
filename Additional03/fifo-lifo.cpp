@@ -156,12 +156,13 @@ void PrintContainer(const vector<string>& container) {
 //Tests
 bool TestLifo() {
 	vector <string> container;
+	vector <string> test = { "A", "B", "C", "D" };
 	string item = "Arbitrary";
 	
-	LifoPush(container, "A");
-	LifoPush(container, "B");
-	LifoPush(container, "C");
-	LifoPush(container, "D");
+	for (auto n : test) {
+		LifoPush(container, n);
+	}
+	
 	
 	if (container.at(0) != "D" ||
 		container.at(1) != "C" ||
@@ -185,12 +186,14 @@ bool TestLifo() {
 
 bool TestFifo() {
 	vector <string> container;
+	vector <string> test = { "A", "B", "C", "D" };
 	string item = "Arbitrary";
 
-	FifoPush(container, "A");
-	FifoPush(container, "B");
-	FifoPush(container, "C");
-	FifoPush(container, "D");
+	for (auto n : test) {
+		FifoPush(container, n);
+
+	}
+
 
 	if (container.at(0) != "D" ||
 		container.at(1) != "C" ||
